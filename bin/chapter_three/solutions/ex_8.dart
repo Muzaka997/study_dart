@@ -1,20 +1,67 @@
+// 8. Create a list of words and count the number of occurrences of each word.
+import 'dart:io';
+
 void main() {
-  List<String> words = ['apple', 'banana', 'apple', 'orange', 'banana'];
+  List<String> words = ['as', 'bbs', 'ssd', 'aaqw', 'as'];
+  print(occurrences(words));
+}
 
-  Map<String, int> wordCounts = {};
-
-  for (String word in words) {
-    if (wordCounts.containsKey(word)) {
-      final int oldWordsCount = wordCounts[
-          word]!; //we know that `wordCounts` list contains `word` so we can be absolutely sure that wordCounts[word] is not null so we can use ! operator.
-      wordCounts[word] = oldWordsCount + 1;
+Map<String, int> occurrences(List<String> name) {
+  Map<String, int> numOfOccurrences = {};
+  for (int i = 0; i < name.length; i++) {
+    String currentword = name[i];
+    if (numOfOccurrences.containsKey(currentword)) {
+      numOfOccurrences[currentword] = (numOfOccurrences[currentword]! + 1);
     } else {
-      wordCounts[word] = 1;
+      numOfOccurrences[currentword] = 1;
     }
   }
-
-  print(wordCounts);
+  return numOfOccurrences;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   List<String> words = ['apple', 'banana', 'apple', 'orange', 'banana'];
+
+//   Map<String, int> wordCounts = {};
+
+//   for (String word in words) {
+//     if (wordCounts.containsKey(word)) {
+//       final int oldWordsCount = wordCounts[
+//           word]!; //we know that `wordCounts` list contains `word` so we can be absolutely sure that wordCounts[word] is not null so we can use ! operator.
+//       wordCounts[word] = oldWordsCount + 1;
+//     } else {
+//       wordCounts[word] = 1;
+//     }
+//   }
+
+//   print(wordCounts);
+// }
 
 
 // Explanation:
